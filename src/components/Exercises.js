@@ -30,7 +30,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     };
 
     fetchExercisesData();
-  }, [bodyPart]);
+  }, [bodyPart, setExercises]); // إضافة setExercises هنا في التبعية
 
   // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
@@ -42,7 +42,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
   const paginate = (event, value) => {
     setCurrentPage(value);
-
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
